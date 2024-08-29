@@ -1,0 +1,45 @@
+1. CONOCIMIENTOS SQL
+ 1.1) Describe el funcionamiento general de la sentencia JOIN.
+Se utiliza para unir 2 o más tablas para generar una nueva a partir de los campos de las 2 primeras, normalmente debe existir alguna llave para combinarlas, ya sea alguna llave primaria, foránea o compuesta 
+ 1.2) ¿Cuáles son los tipos de JOIN y cuál es el funcionamiento de los mismos?
+Existen 4 tipos de join:
+JOIN- se obtiene de la unión de A y B y sólo se obtiene como resultado todo lo que coincida en la igualdad de A y B
+LEFT JOIN – se obtiene sólo la parte izquierda de los conjuntos incluyendo la intersección de A y B, en caso de considerar A como la parte izquierda, obtendremos como resultado todos los elementos de ese conjunto
+RIGHT JOIN - se obtiene sólo la parte derecha de los conjuntos incluyendo la intersección de A y B, en caso de considerar B como la parte derecha, obtendremos como resultado todos los elementos de ese conjunto
+FULL JOIN – se obtiene de la unión de ambos conjuntos A y B, con este JOIN se obtiene la totalidad del conjunto independientemente de que existan o no coincidencias entre A y B
+ 1.3) ¿Cuál el funcionamiento general de los TRIGGER y qué propósito tienen?
+Son sentencias que indican la ejecución automática de un evento siempre y cuando se cumpla la ejecución propuesta de la sentencia, su propósito es desencadenar validaciones que se puedan o deban cumplir antes de ejecutar algún cambio.
+ 1.4) ¿Qué es y para qué sirve un STORED PROCEDURE?
+Es un script de SQL almacenado el cual se puede reutilizar las veces requeridas, se utiliza cuando se identifica que se realizan operaciones de manera frecuente, permitiendo ejecutar este script cada que sea llamado e incluso con parámetros cambiantes.
+
+1.5) Traer todos los productos que tengan una venta.
+select
+	productos.*
+from
+	productos
+join ventas on
+	ventas.idProducto = productos.idProducto;
+
+
+
+1.6) Traer todos los productos que tengan ventas y la cantidad total de productos vendidos.
+select
+	nombre,
+	precio,
+	ventas.cantidad as productos_vendidos
+from
+	productos
+join ventas on
+	ventas.idProducto = productos.idProducto;
+
+1.7) Traer todos los productos (independientemente de si tienen ventas o no) y la suma total ($) vendida por producto 
+select
+	nombre,
+	precio,
+	ventas.cantidad as productos_vendidos,
+	precio * ventas.cantidad as venta_total
+from
+	productos
+left join ventas on
+	ventas.idProducto = productos.idProducto;
+
