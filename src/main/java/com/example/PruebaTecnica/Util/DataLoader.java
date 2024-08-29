@@ -8,8 +8,6 @@ import com.example.PruebaTecnica.repository.UserRepository;
 import com.example.PruebaTecnica.repository.RoleRepository;
 import com.example.PruebaTecnica.model.Role;
 import com.example.PruebaTecnica.model.User;
-import java.util.HashSet;
-import java.util.Set;
 
 @Component
 public class DataLoader implements CommandLineRunner {
