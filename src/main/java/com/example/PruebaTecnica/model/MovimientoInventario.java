@@ -5,6 +5,8 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 
+import com.example.PruebaTecnica.Util.TipoMovimiento;
+
 @Entity
 @Data
 public class MovimientoInventario {

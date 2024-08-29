@@ -1,4 +1,4 @@
-package com.example.PruebaTecnica.model;
+package com.example.PruebaTecnica.Util;
 
 public enum TipoMovimiento {
         ENTRADA,
